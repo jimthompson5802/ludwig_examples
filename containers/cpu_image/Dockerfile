@@ -3,7 +3,7 @@ FROM tensorflow/tensorflow:latest-py3
 
 RUN apt-get -y update && apt-get install -y git
 
-RUN pip install jupyter matplotlib
+RUN pip install jupyter matplotlib nbconvert
 
 RUN pip install ludwig[full]
 
