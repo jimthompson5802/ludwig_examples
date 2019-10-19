@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -x -e
+
+container_parm=${1:-cpubash}  #cpubash | cpujpynb
+project_dir=${PWD}
+
+case ${container_parm} in
+    cpubash) image=ludwig_cpu
+            interactive='-it'
+            ports=" --user ec2-user:ec2-user"
+            other_run_parms=''
+            cmd=/bin/bash;;
+
+    cpujpynb) image=ludwig_cpu
+             interactive='--detach'
+             ports='-p 8888:8888'
+             other_run_parms="--user ec2-user:ec2-user"
+             cmd="jupyter notebook --no-browser --ip 0.0.0.0 \
+                --allow-root --password='' --NotebookApp.token='' \
+                 --notebook-dir=/opt/project";;
+esac
+
+
+docker run ${interactive} --rm \
+    -e INSIDE_DOCKER=true \
+    -v ${project_dir}:/opt/project \
+    ${ports} \
+    ${other_run_parms} \
+    --hostname ${container_parm} \
+    --name ${container_parm} \
+    ${image} \
+    ${cmd}
