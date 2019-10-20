@@ -1,9 +1,9 @@
 # Tensorflow
-FROM tensorflow/tensorflow:latest-py3
+FROM continuumio/anaconda3:latest
 
-RUN apt-get -y update && apt-get install -y git
+RUN apt-get -y update && apt-get install -y build-essential git
 
-RUN pip install jupyter matplotlib nbconvert
+RUN conda install tensorflow-mkl
 
 RUN pip install ludwig[full]
 
@@ -14,4 +14,3 @@ RUN groupadd -g 1000 ec2-user && \
 
 WORKDIR /opt/project
 
-ARG UPDATE_INSTALL=default

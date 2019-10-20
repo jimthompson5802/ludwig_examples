@@ -2,20 +2,14 @@
 
 set -e -x
 
-image=${1:-all}
+image=${1:-tf_cpu}
 
-if [[ ${image} == "all" ]]; then
-    images=(cpu)
-else
-    images=(${image})
-fi
 
-for img in "${images[@]}"
-do
-    echo ">>>> building ${img} image"
-    pushd containers/${img}_image
-    docker build \
-      -t ludwig_${img} .
-    popd
-done
+echo ">>>> building ${image} image"
+pushd containers/${image}
+docker build \
+    --build-arg UPDATE_INSTALL=$(date +%s) \
+  -t ludwig_${image} .
+popd
+
 
