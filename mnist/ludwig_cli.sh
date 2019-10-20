@@ -1,10 +1,12 @@
 #!/bin/bash
+set -xe
 
+image_suffix=${1:-tf_cpu}
 
 docker run \
   --rm \
   -v ${PWD}:/opt/project \
-  ludwig_tf_cpu \
+  ludwig_${image_suffix} \
    ludwig experiment \
   --data_train_csv /opt/project/data/mnist_dataset_training.csv \
   --data_test_csv /opt/project/data/mnist_dataset_testing.csv \
