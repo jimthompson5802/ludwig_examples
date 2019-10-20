@@ -12,5 +12,6 @@ Preparatory steps:
 
 * Create docker images with ludwig software stack.  Run the following bash script.
 ```
-bin/build_images
+bin/build_images tf_cpu
+bin/build_images tf_gpu
 ```
