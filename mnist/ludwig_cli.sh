@@ -2,8 +2,9 @@
 
 
 docker run \
+  --rm \
   -v ${PWD}:/opt/project \
-  ludwig_tf_mkl \
+  ludwig_tf_cpu \
    ludwig experiment \
   --data_train_csv /opt/project/data/mnist_dataset_training.csv \
   --data_test_csv /opt/project/data/mnist_dataset_testing.csv \
