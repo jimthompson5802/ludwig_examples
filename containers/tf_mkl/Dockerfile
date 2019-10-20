@@ -13,4 +13,3 @@ RUN groupadd -g 1000 ec2-user && \
     chown ec2-user:ec2-user /home/ec2-user
 
 WORKDIR /opt/project
-
