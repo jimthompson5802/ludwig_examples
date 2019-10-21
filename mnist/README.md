@@ -13,5 +13,5 @@ Use provided Docker containers to run this example.
 
 
 
-##Training time on AWS (p2.xlarge with AWS Deep Learning Base AMI)  Approx 6 secs/epoch
+## Training time on AWS (p2.xlarge with AWS Deep Learning Base AMI)  Approx 6 secs/epoch
 ![](../images/ludwig_tf_gpu_timing.png)
