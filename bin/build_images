@@ -3,11 +3,13 @@
 set -e -x
 
 image=${1:-tf_cpu}
+progress=${2:-auto}
 
 
 echo ">>>> building ${image} image"
 pushd containers/${image}
 docker build \
+    --progress=${progress} \
     --build-arg UPDATE_INSTALL=$(date +%s) \
   -t ludwig_${image} .
 popd
