@@ -15,3 +15,6 @@ Preparatory steps:
 bin/build_images tf_cpu
 bin/build_images tf_gpu
 ```
+
+## Conceptual View
+![](images/docker_containers.png)
