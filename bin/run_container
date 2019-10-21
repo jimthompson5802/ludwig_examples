@@ -2,7 +2,7 @@
 
 set -x -e
 
-container_parm=${1:-cpubash}  #cpubash | cpujpynb | mklbash | mkljpynb
+container_parm=${1:-cpubash}  #cpubash | cpujpynb | mklbash | mkljpynb | gpubash | gpujpynb
 project_dir=${PWD}
 
 case ${container_parm} in
@@ -27,6 +27,20 @@ case ${container_parm} in
             cmd=/bin/bash;;
 
     mkljpynb) image=ludwig_tf_mkl
+             interactive='--detach'
+             ports='-p 8888:8888'
+             other_run_parms="--user ec2-user:ec2-user"
+             cmd="jupyter notebook --no-browser --ip 0.0.0.0 \
+                --allow-root --password='' --NotebookApp.token='' \
+                 --notebook-dir=/opt/project";;
+
+   gpubash) image=ludwig_tf_gpu
+            interactive='-it'
+            ports=" --user ec2-user:ec2-user"
+            other_run_parms=''
+            cmd=/bin/bash;;
+
+    gpujpynb) image=ludwig_tf_gpu
              interactive='--detach'
              ports='-p 8888:8888'
              other_run_parms="--user ec2-user:ec2-user"
