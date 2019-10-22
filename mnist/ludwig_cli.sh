@@ -1,6 +1,10 @@
 #!/bin/bash
 set -xe
 
+#
+# Script to run a Ludwig experiment via command line
+#
+
 image_suffix=${1:-tf_cpu}
 
 docker run \
