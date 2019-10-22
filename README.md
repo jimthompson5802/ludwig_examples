@@ -9,6 +9,7 @@ Objectives:
 * Generate modeling assessment visualizations, e.g., learning curves, confusion matrix, etc.
 * Provide samples for various types of models:  image classification, text analytics, sentiment analysis, time series forecasting, etc.
 
+## Repo Contents
 |Directory|Description|
 |---------|-----------|
 |bin|bash scripts for various function|
