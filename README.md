@@ -1,6 +1,13 @@
-# uber ludwig examples
+# Uber ludwig examples
 
 Example code illustrating using Uber's [ludwig](https://uber.github.io/ludwig/) deep learning framework.
+
+Objectives:
+* Define Docker images for the Ludwig software stack, including both Tensorflow (cpu-enabled) and Tensorflow (gpu-enabled)
+* Demonstrate ludwig using command line execution
+* Demonstrate ludwig using Python api
+* Generate modeling assessment visualizations, e.g., learning curves, confusion matrix, etc.
+* Provide samples for various types of models:  image classification, text analytics, sentiment analysis, time series forecasting, etc.
 
 |Directory|Description|
 |---------|-----------|
