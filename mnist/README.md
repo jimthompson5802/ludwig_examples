@@ -4,9 +4,12 @@
 
 
 * Prepare training and test data sets.  Run script: `bash create_mnist_dataset.sh`
-* Train CNN model.  
+* Train CNN model using command line.  
   * Train on cpu-based Docker image: `bash ludwig_cli.sh tf_cpu`
   * Train on gpu-based Docker image: `bash ludwig_cli.sh tf_gpu`
+* Train CNN model using Python API.  
+  * Train on cpu-based Docker image: `bash ludwig_api.sh tf_cpu`
+  * Train on gpu-based Docker image: `bash ludwig_api.sh tf_gpu`
 
 ## Training time on MacOS (cpu).  Approx 74 secs/epoch
 ![](../images/ludwig_tf_cpu_timing.png)
