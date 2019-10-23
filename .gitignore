@@ -1,5 +1,5 @@
 data
 .ipynb_checkpoints
-mnist/results
+results
 .idea
 .DS_Store
