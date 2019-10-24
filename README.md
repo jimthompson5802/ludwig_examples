@@ -14,7 +14,9 @@ Objectives:
 |---------|-----------|
 |bin|bash scripts for various function|
 |containers|Docker containers for ludwig software stack|
+|kaggle_titanic|Kaggle Titanic predictive competition data set|
 |mnist|Use of ludwig with mnist data set|
+|text_classification|Text classification model|
 
 Preparatory steps:
 
