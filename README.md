@@ -17,6 +17,7 @@ Objectives:
 |kaggle_titanic|Kaggle Titanic predictive competition data set|
 |mnist|Use of ludwig with mnist data set|
 |text_classification|Text classification model|
+|time_series|Time series forecasting temperature|
 
 Preparatory steps:
 
