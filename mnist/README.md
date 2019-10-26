@@ -15,7 +15,9 @@
   * Make predictions using gpu-based Docker image: `bash ludwig_predictions.sh tf_gpu`
 
 ## Training time on MacOS (cpu).  Approx 74 secs/epoch
-![](../images/ludwig_tf_cpu_timing.png =800X900)
+<img src="https://github.com/jimthompson5802/ludwig_examples/blob/master/images/ludwig_tf_cpu_timing.png" >
+
+###![](../images/ludwig_tf_cpu_timing.png =800X900)
 
 ## Training time on AWS (p2.xlarge(Nvidia K80 gpu) with AWS Deep Learning Base AMI)  Approx 6 secs/epoch
 ![](../images/ludwig_tf_gpu_timing.png)
