@@ -1,6 +1,18 @@
 from ludwig.api import LudwigModel
 import logging
+import shutil
+import os
 
+# reset data preprocessing
+try:
+    os.remove('./data/*.hdf5')
+except:
+    pass
+
+try:
+    os.remove('./data/*.json')
+except:
+    pass
 
 # train a model
 model_definition = {...}
