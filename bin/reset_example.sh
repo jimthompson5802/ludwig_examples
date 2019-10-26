@@ -11,7 +11,7 @@ do
   fi
 done
 
-list_of_dirs=(results results_api saved_model viz)
+list_of_dirs=(results results_api saved_model viz viz_api)
 for d in "${list_of_dirs[@]}"
 do
   echo rermoving ${d}
@@ -20,3 +20,4 @@ done
 
 # recreate the viz directory
 mkdir viz
+mkdir viz_api
