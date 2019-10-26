@@ -20,3 +20,9 @@ if [[ -d saved_model ]]; then
   echo removing saved_model directory
   rm -fr saved_model
 fi
+
+if [[ -d viz ]]; then
+  echo removing viz directory
+  rm -fr viz
+  mkdir viz
+fi
