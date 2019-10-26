@@ -17,7 +17,3 @@ do
   echo rermoving ${d}
   rm -fr ${d}
 done
-
-# recreate the viz directory
-mkdir viz
-mkdir viz_api
