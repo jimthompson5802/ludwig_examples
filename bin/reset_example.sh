@@ -11,18 +11,12 @@ do
   fi
 done
 
-if [[ -d results ]]; then
-  echo removing results directory
-  rm -fr results
-fi
+list_of_dirs=(results results_api saved_model viz)
+for d in "${list_of_dirs[@]}"
+do
+  echo rermoving ${d}
+  rm -fr ${d}
+done
 
-if [[ -d saved_model ]]; then
-  echo removing saved_model directory
-  rm -fr saved_model
-fi
-
-if [[ -d viz ]]; then
-  echo removing viz directory
-  rm -fr viz
-  mkdir viz
-fi
+# recreate the viz directory
+mkdir viz
