@@ -1,24 +1,29 @@
 from ludwig.api import LudwigModel
 import logging
-import shutil
+import glob
 import os
 
 # reset data preprocessing
-try:
-    os.remove('./data/*.hdf5')
-except:
-    pass
+files = glob.glob('./data/*.hdf5')
+for f in files:
+    try:
+        os.remove(f)
+    except:
+        pass
 
-try:
-    os.remove('./data/*.json')
-except:
-    pass
+files = glob.glob('./data/*.json')
+for f in files:
+    try:
+        os.remove(f)
+    except:
+        pass
+
 
 # train a model
 model_definition = {...}
 model = LudwigModel(model_definition, model_definition_file='./model_definition.yaml', logging_level=logging.INFO)
-train_stats = model.train(data_train_csv='./data/mnist_dataset_training.csv',
-                          data_test_csv='./data/mnist_dataset_testing.csv')
+train_stats = model.train(data_csv='./data/mnist_dataset_training.csv',
+                          output_directory='./results_api')
 
 # save trained model
 model.save('./saved_model')
