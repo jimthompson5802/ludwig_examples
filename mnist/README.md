@@ -15,7 +15,7 @@
   * Make predictions using gpu-based Docker image: `bash ludwig_predictions.sh tf_gpu`
 
 ## Training time on MacOS (cpu).  Approx 74 secs/epoch
-<img src="https://github.com/jimthompson5802/ludwig_examples/blob/master/images/ludwig_tf_cpu_timing.png" width="800",
+<img src="https://github.com/jimthompson5802/ludwig_examples/blob/master/images/ludwig_tf_cpu_timing.png" width="800" 
   height="900">
 
 ###![](../images/ludwig_tf_cpu_timing.png =800X900)
