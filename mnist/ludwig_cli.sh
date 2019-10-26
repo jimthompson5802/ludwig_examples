@@ -1,18 +1,10 @@
 #!/bin/bash
-set -xe
-
-#
-# Script to run a Ludwig experiment via command line
-#
 
 image_suffix=${1:-tf_cpu}
 
-docker run \
-  --rm \
-  -v ${PWD}:/opt/project \
-  ludwig_${image_suffix} \
+../bin/run_batch_cli ${image_suffix} \
    ludwig experiment \
      --model_definition_file /opt/project/model_definition.yaml \
-     --data_csv /opt/project/data/mnist_dataset_training.csv
-#  --data_test_csv /opt/project/data/mnist_dataset_testing.csv \
+     --data_train_csv /opt/project/data/mnist_dataset_training.csv \
+     --data_test_csv /opt/project/data/mnist_dataset_testing.csv \
 

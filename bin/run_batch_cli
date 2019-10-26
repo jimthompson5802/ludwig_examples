@@ -1,0 +1,15 @@
+#!/bin/bash
+set -xe
+
+#
+# Script to run a Ludwig experiment via command line
+#
+
+image_suffix=${1:-tf_cpu}
+
+shift
+
+docker run \
+  --rm \
+  -v ${PWD}:/opt/project \
+  ludwig_${image_suffix} $@
