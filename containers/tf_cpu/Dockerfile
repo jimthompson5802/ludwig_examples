@@ -6,6 +6,7 @@ RUN apt-get -y update && apt-get install -y git
 RUN pip install jupyter matplotlib nbconvert
 
 RUN pip install ludwig[full]
+RUN pip install ludwig[test]
 
 RUN groupadd -g 1000 ec2-user && \
     useradd -u 1000 -g 1000 ec2-user && \
