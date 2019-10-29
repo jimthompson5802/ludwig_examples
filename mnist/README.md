@@ -21,6 +21,9 @@
 ## Training time on AWS (p2.xlarge(Nvidia K80 gpu) with AWS Deep Learning Base AMI)  Approx 6 secs/epoch
 ![](../images/ludwig_tf_gpu_timing.png)
 
+## Sample Visualizations
+### Learning Curves
+![](./viz_api/learning_curves_combined_loss.png)
 
 ## Reset Example
 If it is desired to remove old data pre-processing and results, run this command:
