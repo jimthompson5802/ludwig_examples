@@ -23,7 +23,7 @@
 
 ## Sample Visualizations
 ### Learning Curves
-![](./viz_api/learning_curves_combined_loss.png)
+![](./viz_api/learning_curves_label_loss.png)
 
 ## Reset Example
 If it is desired to remove old data pre-processing and results, run this command:
