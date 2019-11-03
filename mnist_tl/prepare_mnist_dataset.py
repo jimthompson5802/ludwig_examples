@@ -32,7 +32,7 @@ for digit_type in ['even', 'odd']:
                 path = '{}/{}/{}'.format(digit_type, name, i)
                 for file in os.listdir(path):
                     if file.endswith(".png"):
-                        output_file.write('{},{}\n'.format(os.path.join(path, file), str(i)))
+                        output_file.write('{},{}\n'.format(os.path.join(name, i, file), str(i)))
 
 
 # In[ ]:
