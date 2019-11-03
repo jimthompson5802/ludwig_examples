@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# clean out old data
+rm -fr data
+rm -fr results
+
 # create required directories
 mkdir -p data/even/training
 mkdir -p data/even/testing
@@ -12,8 +16,11 @@ function copy_data(){
   digits=("$@")
   for i in "${digits[@]}"
   do
-    cp  ../mnist/data/training/${i}/*  ./data/training/${dir}/${i}
-    cp  ../mnist/data/testing/${i}/*  ./data/testing/${dir}/${i}
+    echo copying to ${dir}/training/${i}
+    cp -R ../mnist/data/training/${i}  ./data/${dir}/training/
+
+    echo copying to ${dir}/testing/${i}
+    cp -R ../mnist/data/testing/${i}  ./data/${dir}/testing/
   done
 }
 
