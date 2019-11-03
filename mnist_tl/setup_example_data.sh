@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#
+# IMPORTANT: This scrip assumes the 'mnist/data/training/*' and 'mnist/data/testing/*'
+# have been set up.
+#
+
 # clean out old data
 rm -fr data
 rm -fr results
