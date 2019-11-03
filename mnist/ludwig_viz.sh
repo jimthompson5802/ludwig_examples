@@ -24,10 +24,3 @@ image_suffix=${1:-tf_cpu}
      -v compare_performance \
      -tes ./results/mnist_cli_experiment_run/test_statistics.json
 
-# learning curve for api training run
-# learning curves
-../bin/run_batch_cli ${image_suffix} \
-   ludwig visualize \
-     --file_format png --output_directory ./viz_api \
-     -v learning_curves \
-     -trs ./results_api/api_experiment_run/training_statistics.json

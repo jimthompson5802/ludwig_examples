@@ -1,0 +1,46 @@
+###
+# Declare model operations - CNN Structure
+###
+
+#x = Convolution2D(30,5,padding='valid',activation='relu',name='ConvLayer1')(x_data)
+#x = Convolution2D(15,5,activation='relu', name='ConvLayer2')(x)
+#x = MaxPooling2D(pool_size=(2,2), name='MaxPoolLayer1')(x)
+#x = Dropout(0.25)(x)
+#x = Flatten()(x)
+#x = Dense(128,activation='relu',name='DenseLayer1')(x)
+#x = Dropout(0.5)(x)
+#y_prob = Dense(5,activation='softmax',name='DenseLayer2')(x)
+
+input_features:
+    -
+        name: image_path
+        type: image
+        preprocessing:
+            num_processes: 4
+        encoder: stacked_cnn
+        conv_layers:
+            -
+                num_filters: 32
+                filter_size: 3
+                pool_size: 2
+                pool_stride: 2
+            -
+                num_filters: 64
+                filter_size: 3
+                pool_size: 2
+                pool_stride: 2
+                dropout: true
+        fc_layers:
+            -
+                fc_size: 128
+                dropout: true
+
+output_features:
+    -
+        name: label
+        type: category
+
+training:
+    dropout_rate: 0.4
+    epochs: 10
+    batch_size: 512
