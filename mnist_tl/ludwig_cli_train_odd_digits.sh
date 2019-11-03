@@ -3,10 +3,10 @@
 image_suffix=${1:-tf_cpu}
 
 ../bin/run_batch_cli ${image_suffix} \
-   ludwig experiment \
+   ludwig train \
     --experiment_name mnist_tl_cli_experiment \
+    --random_seed 1313 \
      --model_definition_file /opt/project/model_definition.yaml \
-     --data_train_csv /opt/project/data/odd/mnist_dataset_training.csv \
-     --data_test_csv /opt/project/data/odd/mnist_dataset_testing.csv
+     --data_csv /opt/project/data/odd/mnist_dataset_training.csv
 
 
