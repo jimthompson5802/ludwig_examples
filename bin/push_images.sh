@@ -3,6 +3,8 @@
 # push docker images to dockerhub
 # assumes already logged into dockerhub
 
+dockerhub_account=${1:-dsimages}
+
 # images to push
 images=(
     ludwig_tf_cpu
@@ -16,10 +18,10 @@ push_image () {
     echo "pushing image: " ${image_to_push}
 
     # create tag for docker hub
-    docker tag ${image_to_push} dsimages/${image_to_push}
+    docker tag ${image_to_push} ${dockerhub_account}/${image_to_push}
 
     # push to docker hub
-    docker push dsimages/${image_to_push}
+    docker push ${dockerhub_account}/${image_to_push}
 
 }
 

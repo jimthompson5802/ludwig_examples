@@ -2,6 +2,8 @@
 
 # pull images from dockerhub
 
+dockerhub_account=${1:-dsimages}
+
 # images to pull
 images=(
     ludwig_tf_cpu
@@ -15,10 +17,10 @@ pull_image () {
     echo "pulling image: " ${image_to_pull}
 
     # pull from docker hub
-    docker pull dsimages/${image_to_pull}
+    docker pull ${dockerhub_account}/${image_to_pull}
 
     # create tag for local use
-    docker tag dsimages/${image_to_pull} ${image_to_pull}
+    docker tag ${dockerhub_account}/${image_to_pull} ${image_to_pull}
 
 }
 
