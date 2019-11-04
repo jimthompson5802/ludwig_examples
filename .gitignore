@@ -1,7 +1,7 @@
 data
 raw_data
 .ipynb_checkpoints
-results
+results*
 .idea
 .DS_Store
 results_api
