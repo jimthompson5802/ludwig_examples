@@ -8,13 +8,13 @@ project_dir=${PWD}
 case ${container_parm} in
     cpubash) image=ludwig_tf_cpu
             interactive='-it'
-            ports=" --user ec2-user:ec2-user"
-            other_run_parms=''
+            ports='-p 6006:6006'
+            other_run_parms="--user ec2-user:ec2-user"
             cmd=/bin/bash;;
 
     cpujpynb) image=ludwig_tf_cpu
              interactive='--detach'
-             ports='-p 8888:8888'
+             ports='-p 8888:8888 -p 6006:6006'
              other_run_parms="--user ec2-user:ec2-user"
              cmd="jupyter notebook --no-browser --ip 0.0.0.0 \
                 --allow-root --password='' --NotebookApp.token='' \
@@ -22,13 +22,13 @@ case ${container_parm} in
 
     mklbash) image=ludwig_tf_mkl
             interactive='-it'
-            ports=" --user ec2-user:ec2-user"
-            other_run_parms=''
+            ports='-p 6006:6006'
+            other_run_parms=" --user ec2-user:ec2-user"
             cmd=/bin/bash;;
 
     mkljpynb) image=ludwig_tf_mkl
              interactive='--detach'
-             ports='-p 8888:8888'
+             ports='-p 8888:8888 -p 6006:6006'
              other_run_parms="--user ec2-user:ec2-user"
              cmd="jupyter notebook --no-browser --ip 0.0.0.0 \
                 --allow-root --password='' --NotebookApp.token='' \
@@ -36,13 +36,13 @@ case ${container_parm} in
 
    gpubash) image=ludwig_tf_gpu
             interactive='-it'
-            ports=" --user ec2-user:ec2-user"
-            other_run_parms=''
+            ports='-p 6006:6006'
+            other_run_parms=" --user ec2-user:ec2-user"
             cmd=/bin/bash;;
 
     gpujpynb) image=ludwig_tf_gpu
              interactive='--detach'
-             ports='-p 8888:8888'
+             ports='-p 8888:8888 -p 6006:6006'
              other_run_parms="--user ec2-user:ec2-user"
              cmd="jupyter notebook --no-browser --ip 0.0.0.0 \
                 --allow-root --password='' --NotebookApp.token='' \
